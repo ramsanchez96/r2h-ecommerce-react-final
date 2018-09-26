@@ -80,7 +80,7 @@ $amatic_sc: "Amatic SC", cursive;
   .footer__nav {
     margin: 0;
     display: flex;
-    width:100%;
+    width: 100%;
 
     .nav__ul--pages {
       // margin: 0;
@@ -93,7 +93,7 @@ $amatic_sc: "Amatic SC", cursive;
 
       a {
         text-decoration: none;
-        color:$primary-color;
+        color: $primary-color;
         font-size: 20px;
       }
     }
@@ -116,3 +116,81 @@ $amatic_sc: "Amatic SC", cursive;
   }
 }
 
+.productHeading {
+  color: $secondary-color;
+  font-family: $amatic_sc;
+  font-size: 50px;
+  margin: 0 auto;
+}
+
+.filter {
+  .filter__label {
+    color: $secondary-color;
+    font-family: $nunito;
+    font-size: 20px;
+    margin: auto 5px auto 10px;
+  }
+
+  .filter__select {
+    width: 200px;
+    font-family: $nunito;
+    background-color: $primary-color;
+    color: $secondary-color;
+    height: 25px;
+  }
+
+  .filter__submit {
+    margin: 10px;
+    background-color: $secondary-color;
+    color: $primary-color;
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: $nunito;
+  }
+}
+
+.productCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .productCard {
+    width: 300px;
+    height: 300px;
+    box-shadow: 1px 1px 1px $secondary-color;
+    margin: 10px auto;
+  
+    .productCard__heading {
+      color: $secondary-color;
+      font-family: $nunito;
+      margin: 0 auto;
+      font-size:20px;
+    }
+    
+    .productCard__brand {
+      color: $secondary-color;
+      font-family: $nunito;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+  
+    .productCard__description {
+      font-family: $nunito;
+      margin: 0 auto;
+      font-size: 10px;
+    }
+  
+    .productCard__price {
+      font-family: $nunito;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+  
+    .productCard__img {
+      width:200px;
+      height:187.875px;
+    }
+  }
+}

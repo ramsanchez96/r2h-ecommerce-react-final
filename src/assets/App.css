@@ -94,4 +94,73 @@
   width: 40px;
 }
 
+.productHeading {
+  color: #0377e4;
+  font-family: "Amatic SC", cursive;
+  font-size: 50px;
+  margin: 0 auto;
+}
+
+.filter .filter__label {
+  color: #0377e4;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  margin: auto 5px auto 10px;
+}
+.filter .filter__select {
+  width: 200px;
+  font-family: "Nunito", sans-serif;
+  background-color: #fff;
+  color: #0377e4;
+  height: 25px;
+}
+.filter .filter__submit {
+  margin: 10px;
+  background-color: #0377e4;
+  color: #fff;
+  width: 50px;
+  height: 25px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+}
+
+.productCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.productCardContainer .productCard {
+  width: 300px;
+  height: 300px;
+  box-shadow: 1px 1px 1px #0377e4;
+  margin: 10px auto;
+}
+.productCardContainer .productCard .productCard__heading {
+  color: #0377e4;
+  font-family: "Nunito", sans-serif;
+  margin: 0 auto;
+  font-size: 20px;
+}
+.productCardContainer .productCard .productCard__brand {
+  color: #0377e4;
+  font-family: "Nunito", sans-serif;
+  margin: 0 auto;
+  font-size: 15px;
+}
+.productCardContainer .productCard .productCard__description {
+  font-family: "Nunito", sans-serif;
+  margin: 0 auto;
+  font-size: 10px;
+}
+.productCardContainer .productCard .productCard__price {
+  font-family: "Nunito", sans-serif;
+  margin: 0 auto;
+  font-size: 15px;
+}
+.productCardContainer .productCard .productCard__img {
+  width: 200px;
+  height: 187.875px;
+}
+
 /*# sourceMappingURL=App.css.map */
