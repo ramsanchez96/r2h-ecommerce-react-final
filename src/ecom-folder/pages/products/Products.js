@@ -13,10 +13,11 @@ class Products extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/products")
-      .then(response => {
-        return response.json();
-      })
+    fetch("http://localhost:8080/products/")
+      .then(response => 
+        response.json()
+      
+      )
       .then(data => {
         this.setState({
           waters: data.products,

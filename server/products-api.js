@@ -11,11 +11,13 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const schema = require('./schemas');
 const {Product} = require('./schemas'); //module.exports = { Product }
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+const cors = require('cors');
+mongoose.connect('mongodb://localhost:27017/products', {useNewUrlParser: true});
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());    
 
 // const products = JSON.parse(fs.readFileSync('./products.json', 'utf-8'));
 
