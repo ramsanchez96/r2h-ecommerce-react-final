@@ -116,7 +116,7 @@ $amatic_sc: "Amatic SC", cursive;
   }
 }
 
-.productHeading {
+.products__Heading {
   color: $secondary-color;
   font-family: $amatic_sc;
   font-size: 50px;
@@ -156,11 +156,17 @@ $amatic_sc: "Amatic SC", cursive;
   flex-wrap: wrap;
   justify-content: space-around;
 
+  .productCard:hover{
+    transform: scale(1.1);
+  }
+
   .productCard {
     width: 300px;
     height: 300px;
-    box-shadow: 1px 1px 1px $secondary-color;
-    margin: 10px auto;
+    box-shadow: 10px 10px 10px lightblue;
+    margin: 15px auto;
+    transition: .3s;
+    background-color: rgba(255, 255, 255, 0.5);
   
     .productCard__heading {
       color: $secondary-color;
@@ -193,4 +199,61 @@ $amatic_sc: "Amatic SC", cursive;
       height:187.875px;
     }
   }
+}
+
+.formContainer {
+  width: 100vw;
+  height: 72vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/img/backgroundImg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .contactForm {
+    display: flex;
+    width: 20%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background:rgba(255,255,255, 0.9);
+    
+    // text-align:center;
+  
+    .contactForm__heading {
+      color: $secondary-color;
+      font-family: $nunito;
+    }
+  
+    label {
+      display: block;
+      color: $secondary-color;
+      font-family: $nunito; 
+    }
+  
+    input{
+      width: 150px;
+      height:20px;
+      border: 2px $secondary-color solid;
+      border-radius: 5%;
+      color: $secondary-color;
+    }
+  
+    textarea {
+      width: 150px;
+      border: 2px $secondary-color solid;
+    }
+  
+    .submit {
+      background-color: $secondary-color;
+      color: $primary-color;
+    }
+  }
+}
+
+.adminCard {
+  border: 1px red solid;
+  margin: 5px;
 }

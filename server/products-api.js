@@ -11,15 +11,22 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const schema = require('./schemas');
 const {Product} = require('./schemas'); //module.exports = { Product }
+const {contactInfo} = require('./contactSchema'); 
 const cors = require('cors');
 mongoose.connect('mongodb://localhost:27017/products', {useNewUrlParser: true});
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors());    
+app.use(cors()); 
+app.use(bodyParser.urlencoded({ //For contact form info
+    extended: true
+   })); 
+
 
 // const products = JSON.parse(fs.readFileSync('./products.json', 'utf-8'));
+
+//PRODUCTS
 
 //GET:
 app.get('/products', (req, res) => {
@@ -126,6 +133,33 @@ app.put("/products/:id", (req, res) => {
         product.save().then(productAdded => res.send(productAdded)).catch(err => res.status(400).send(err))
     })
   });
+
+
+  //CONTACT
+
+  app.post('/formSubmit', (req, res) => {
+    // make something like:{name: "water", id: 000}
+    // expecting: {name: "water", id: 000}
+    const {firstName, lastName, email, work, comments} = req.body;
+    
+    const newContactInfo = new contactInfo({
+        firstName, 
+        lastName, 
+        email, 
+        work, 
+        comments
+    });
+    //     products.push(newProduct);
+    //     fs.writeFileSync('./products.json', JSON.stringify(products));
+    //     res.send(newProduct);
+    // } else {
+    //     return res.status(422).send('Unable to add product');
+    // }
+    newContactInfo.save().then(() => {
+        res.status(200).redirect('http://localhost:3000/contact');
+    })
+});
+
 
 app.listen(8080);
 

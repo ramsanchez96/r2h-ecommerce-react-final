@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
-import '../src/assets/App.css';
-import Nav from './ecom-folder/pages/Nav';
-import Footer from './ecom-folder/pages/Footer';
+import React, { Component } from "react";
+import "../src/assets/App.css";
+import Nav from "./ecom-folder/pages/Nav";
+import Footer from "./ecom-folder/pages/Footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Products from './ecom-folder/pages/products/Products';
-import Home from './ecom-folder/pages/home/Home';
-import Contact from './ecom-folder/pages/contact/Contact';
+import Products from "./ecom-folder/pages/products/Products";
+import Home from "./ecom-folder/pages/home/Home";
+import Contact from "./ecom-folder/pages/contact/Contact";
+import Callback from "./Callback";
+import Admin from "./ecom-folder/pages/admin/Admin";
+import SecuredRoute from "./SecuredRoute";
 
 class App extends Component {
   constructor() {
@@ -20,10 +23,7 @@ class App extends Component {
 
   componentDidMount() {
     fetch("http://localhost:8080/products/")
-      .then(response => 
-        response.json()
-      
-      )
+      .then(response => response.json())
       .then(data => {
         this.setState({
           waters: data.products,
@@ -83,9 +83,27 @@ class App extends Component {
         <div>
           <Nav />
           <Switch>
-            <Route path="/" component={Home} exact/>
-            <Route path="/products" render={() => (<Products filteredWaters={this.state.filteredWaters} hasWaters={this.state.hasWaters} handleFilter={(e) => this.handleFilter(e)}/>)} exact/>
-            <Route path="/contact" component={Contact} exact/>
+            <Route path="/" component={Home} exact />
+            <Route
+              path="/products"
+              render={() => (
+                <Products
+                  filteredWaters={this.state.filteredWaters}
+                  hasWaters={this.state.hasWaters}
+                  handleFilter={e => this.handleFilter(e)}
+                />
+              )}
+              exact
+            />
+            <Route path="/contact" component={Contact} exact />
+            <SecuredRoute
+              path="/admin"
+              component={Admin}
+              filteredWaters={this.state.filteredWaters}
+              hasWaters={this.state.hasWaters}
+              exact
+            />
+            <Route exact path="/callback" component={Callback} />
           </Switch>
           <Footer />
         </div>

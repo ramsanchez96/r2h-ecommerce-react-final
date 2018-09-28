@@ -6,7 +6,7 @@ export default class SimpleSlider extends Component {
     const settings = {
       dots: true,
       infinite: true,
-      speed: 500,
+      speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1
     };
@@ -14,16 +14,16 @@ export default class SimpleSlider extends Component {
       <div>
         <Slider {...settings}>
           <div>
-            <img src="img/slide2.jpg" className="slider__Img"/>
+            <img src="img/slide2.jpg" className="slider__Img" alt="This is a promotional slider"/>
           </div>
           <div>
-          <img src="img/slide1.jpg" className="slider__Img"/>
+          <img src="img/slide1.jpg" className="slider__Img" alt="This is a promotional slider"/>
           </div>
           <div>
-          <img src="img/slide3.jpg" className="slider__Img"/>
+          <img src="img/slide3.jpg" className="slider__Img" alt="This is a promotional slider"/>
           </div>
           <div>
-          <img src="img/slide4.jpg" className="slider__Img"/>
+          <img src="img/slide4.jpg" className="slider__Img" alt="This is a promotional slider"/>
           </div>
         </Slider>
       </div>

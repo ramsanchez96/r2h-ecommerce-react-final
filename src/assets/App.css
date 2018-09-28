@@ -94,7 +94,7 @@
   width: 40px;
 }
 
-.productHeading {
+.products__Heading {
   color: #0377e4;
   font-family: "Amatic SC", cursive;
   font-size: 50px;
@@ -130,11 +130,16 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.productCardContainer .productCard:hover {
+  transform: scale(1.1);
+}
 .productCardContainer .productCard {
   width: 300px;
   height: 300px;
-  box-shadow: 1px 1px 1px #0377e4;
-  margin: 10px auto;
+  box-shadow: 10px 10px 10px lightblue;
+  margin: 15px auto;
+  transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .productCardContainer .productCard .productCard__heading {
   color: #0377e4;
@@ -161,6 +166,55 @@
 .productCardContainer .productCard .productCard__img {
   width: 200px;
   height: 187.875px;
+}
+
+.formContainer {
+  width: 100vw;
+  height: 72vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/img/backgroundImg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.formContainer .contactForm {
+  display: flex;
+  width: 20%;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  background: rgba(255, 255, 255, 0.9);
+}
+.formContainer .contactForm .contactForm__heading {
+  color: #0377e4;
+  font-family: "Nunito", sans-serif;
+}
+.formContainer .contactForm label {
+  display: block;
+  color: #0377e4;
+  font-family: "Nunito", sans-serif;
+}
+.formContainer .contactForm input {
+  width: 150px;
+  height: 20px;
+  border: 2px #0377e4 solid;
+  border-radius: 5%;
+  color: #0377e4;
+}
+.formContainer .contactForm textarea {
+  width: 150px;
+  border: 2px #0377e4 solid;
+}
+.formContainer .contactForm .submit {
+  background-color: #0377e4;
+  color: #fff;
+}
+
+.adminCard {
+  border: 1px red solid;
+  margin: 5px;
 }
 
 /*# sourceMappingURL=App.css.map */
