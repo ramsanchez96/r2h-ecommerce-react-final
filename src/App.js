@@ -21,6 +21,7 @@ class App extends Component {
     };
   }
 
+  //PRODUCTS PAGE
   componentDidMount() {
     fetch("http://localhost:8080/products/")
       .then(response => response.json())
@@ -76,6 +77,10 @@ class App extends Component {
       filteredWaters: productArray
     });
   };
+
+  //ADMIN PAGE
+  
+
 
   render() {
     return (

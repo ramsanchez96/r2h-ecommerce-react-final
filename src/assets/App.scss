@@ -257,3 +257,11 @@ $amatic_sc: "Amatic SC", cursive;
   border: 1px red solid;
   margin: 5px;
 }
+
+.loginButton {
+  background-color: $secondary-color;
+  color: $primary-color;
+  font-family: $nunito;
+  font-size: 10px;
+  padding: 10px;
+}

@@ -217,4 +217,12 @@
   margin: 5px;
 }
 
+.loginButton {
+  background-color: #0377e4;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-size: 10px;
+  padding: 10px;
+}
+
 /*# sourceMappingURL=App.css.map */

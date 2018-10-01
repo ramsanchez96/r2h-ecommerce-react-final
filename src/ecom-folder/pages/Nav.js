@@ -20,10 +20,10 @@ const Nav = () => {
                     <li><NavLink to="/contact" exact  activeStyle={activeLink}>Contact</NavLink></li>
 {auth0Client.isAuthenticated() ? <li><NavLink to="/admin" exact activeStyle={activeLink}>Admin</NavLink></li> : null}
                     <li>{!auth0Client.isAuthenticated() && (
-                 <button onClick={auth0Client.signIn} >Log In</button>
+                 <button onClick={auth0Client.signIn} className="loginButton">Log In</button>
                )}
                {auth0Client.isAuthenticated() && (
-                   <button onClick={auth0Client.signOut} >Log Out</button>
+                   <button onClick={auth0Client.signOut} className="loginButton">Log Out</button>
                )}</li>
                 </ul>
             </header>
