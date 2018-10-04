@@ -17,7 +17,8 @@ class App extends Component {
     this.state = {
       waters: [],
       hasWaters: false,
-      filteredWaters: []
+      filterPrice: "",
+      filterType: ""
     };
   }
 
@@ -28,32 +29,89 @@ class App extends Component {
       .then(data => {
         this.setState({
           waters: data.products,
-          hasWaters: true,
-          filteredWaters: data.products
+          hasWaters: true
         });
       });
   }
 
   handleFilter = e => {
     e.preventDefault();
-    let productTypeValue = document.getElementById("filterProductType").value;
-    let productPriceValue = document.getElementById("filterProductPrice").value;
 
+    this.setState({
+      filterPrice: document.getElementById("filterProductPrice").value,
+      filterType: document.getElementById("filterProductType").value
+    });
+  };
+
+  //ADMIN PAGE
+  handleProductDelete = e => {
+    // console.log('here', e.target);
+    // // let url = 'hello';
+    const id = e.target.parentNode.querySelector(".adminCard__productId").innerHTML;
+    fetch(`http://localhost:8080/products/${id}`, {
+      method: "DELETE"
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        let adminWaters = this.state.waters;
+        let updatedAdminWaters = adminWaters.filter(el => {
+          if (data.productId !== el.productId) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+        this.setState({
+          waters: updatedAdminWaters
+        });
+      });
+    // state: products: [water1, water2]
+  };
+
+  handleProductUpdate = e => {
+    fetch(`http://localhost:8080/products/${e.productId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      body: JSON.stringify(e)
+    })
+      .then(response => response.json())
+      .then(data => {
+        let adminWaters = this.state.waters;
+        let updatedAdminWaters = adminWaters.map(el => {
+          if (data.productId === el.productId) {
+            return data;
+          } else {
+            return el;
+          }
+        });
+        this.setState({
+          waters: updatedAdminWaters
+        });
+      });
+    // state: products: [water1, water2]
+  };
+
+  render() {
     let productArray = this.state.waters;
+    const productTypeValue = this.state.filterType;
+    const productPriceValue = this.state.filterPrice;
 
-    if (productTypeValue !== "--") {
+    if (productTypeValue !== "") {
       productArray = productArray.filter(el => {
         if (productTypeValue === "flavoredWaters") {
           return el.flavored;
         } else if (productTypeValue === "unflavoredWaters") {
           return !el.flavored;
         } else {
-          return null;
+          return true;
         }
       });
     }
 
-    if (productPriceValue !== "--") {
+    if (productPriceValue !== "") {
       productArray = productArray.filter(el => {
         var minmax = productPriceValue.split("-");
         var min = parseInt(minmax[0], 10);
@@ -73,16 +131,7 @@ class App extends Component {
         }
       });
     }
-    this.setState({
-      filteredWaters: productArray
-    });
-  };
 
-  //ADMIN PAGE
-  
-
-
-  render() {
     return (
       <BrowserRouter>
         <div>
@@ -93,7 +142,7 @@ class App extends Component {
               path="/products"
               render={() => (
                 <Products
-                  filteredWaters={this.state.filteredWaters}
+                  waters={productArray}
                   hasWaters={this.state.hasWaters}
                   handleFilter={e => this.handleFilter(e)}
                 />
@@ -104,8 +153,11 @@ class App extends Component {
             <SecuredRoute
               path="/admin"
               component={Admin}
-              filteredWaters={this.state.filteredWaters}
+              waters={this.state.waters}
               hasWaters={this.state.hasWaters}
+              handleProductDelete={this.handleProductDelete}
+              handleAddItem={this.handleAddItem}
+              handleProductUpdate={this.handleProductUpdate}
               exact
             />
             <Route exact path="/callback" component={Callback} />

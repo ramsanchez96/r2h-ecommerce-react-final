@@ -60,9 +60,9 @@ app.delete('/products/:id', (req, res) => {
     // }
     // fs.writeFileSync('./products.json', JSON.stringify(filteredProducts));
     // res.send(filteredProducts);
-    schema.Product.findOneAndDelete({'productId': id}).then(personDeleted => {
-        if(personDeleted){
-            res.send(personDeleted)
+    schema.Product.findOneAndDelete({'productId': id}).then(itemDeleted => {
+        if(itemDeleted){
+            res.send(itemDeleted)
         } else {
             res.status(404).send('error');
         }
@@ -90,7 +90,9 @@ app.post('/products', (req, res) => {
     // } else {
     //     return res.status(422).send('Unable to add product');
     // }
-    product.save().then(productAdded => res.send(productAdded)).catch(err => res.status(400).send(err))
+    product.save().then(() => {
+        res.status(200).redirect('http://localhost:3000/admin');
+    })
 });
 
 app.put("/products/:id", (req, res) => {
