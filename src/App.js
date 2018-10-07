@@ -18,11 +18,12 @@ class App extends Component {
       waters: [],
       hasWaters: false,
       filterPrice: "",
-      filterType: ""
+      filterType: "",
+      contacts: []
     };
   }
 
-  //PRODUCTS PAGE
+  //PRODUCTS PAGE LOGIC
   componentDidMount() {
     fetch("http://localhost:8080/products/")
       .then(response => response.json())
@@ -30,6 +31,14 @@ class App extends Component {
         this.setState({
           waters: data.products,
           hasWaters: true
+        });
+      });
+
+    fetch("http://localhost:8080/contacts")
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          contacts: data
         });
       });
   }
@@ -43,17 +52,15 @@ class App extends Component {
     });
   };
 
-  //ADMIN PAGE
+  //ADMIN PAGE LOGIC
   handleProductDelete = e => {
-    // console.log('here', e.target);
-    // // let url = 'hello';
-    const id = e.target.parentNode.querySelector(".adminCard__productId").innerHTML;
+    const id = e.target.parentNode.querySelector(".adminCard__productId")
+      .innerHTML;
     fetch(`http://localhost:8080/products/${id}`, {
       method: "DELETE"
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         let adminWaters = this.state.waters;
         let updatedAdminWaters = adminWaters.filter(el => {
           if (data.productId !== el.productId) {
@@ -66,7 +73,6 @@ class App extends Component {
           waters: updatedAdminWaters
         });
       });
-    // state: products: [water1, water2]
   };
 
   handleProductUpdate = e => {
@@ -91,9 +97,12 @@ class App extends Component {
           waters: updatedAdminWaters
         });
       });
-    // state: products: [water1, water2]
   };
 
+/***
+RENDER: Moving this 'filter' logic to the App render allows me to maintain two lists in one place. 
+The one and always'true' water-products list and the updated 'filtered' products list which will display once a filter is applied
+***/
   render() {
     let productArray = this.state.waters;
     const productTypeValue = this.state.filterType;
@@ -158,6 +167,7 @@ class App extends Component {
               handleProductDelete={this.handleProductDelete}
               handleAddItem={this.handleAddItem}
               handleProductUpdate={this.handleProductUpdate}
+              contacts={this.state.contacts}
               exact
             />
             <Route exact path="/callback" component={Callback} />

@@ -5,9 +5,11 @@ const Home = () => {
   return (
     <div>
       <Slider />
-      <section className="aboutParagraphSection">
-        <h2 className="aboutParagraphSection__heading">About Bubbly...</h2>
-        <p className="aboutParagraphSection__paragraph">
+      <section className="homeAboutParagraphContainer">
+        <h2 className="homeAboutParagraphContainer__heading">
+          About Bubbly...
+        </h2>
+        <p className="homeAboutParagraphContainer__paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -16,7 +18,7 @@ const Home = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <p className="aboutParagraphSection__paragraph">
+        <p className="homeAboutParagraphContainer__paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

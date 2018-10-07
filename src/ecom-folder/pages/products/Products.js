@@ -8,7 +8,7 @@ const Products = (props) => {
     }
 
     return (
-      <div className="products">
+      <div>
         <h2 className="products__Heading">Filter By:</h2>
         <form onSubmit={props.handleFilter} className="filter">
           <label className="filter__label">Type:</label>

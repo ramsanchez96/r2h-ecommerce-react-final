@@ -1,9 +1,5 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-.navlink {
-  border-bottom: #0377e4 1px;
-}
-
 .header {
   background-color: #fff;
   width: 100%;
@@ -20,7 +16,6 @@
 }
 .header .header__ul {
   width: 100%;
-  padding: 0;
   display: flex;
   list-style: none;
   justify-content: space-evenly;
@@ -33,29 +28,12 @@
   font-family: "Nunito", sans-serif;
   padding: 5px;
 }
-
-.slider__Img {
-  width: 100%;
-  height: 400px;
-}
-
-.aboutParagraphSection {
-  margin: 10px auto;
-  padding: 5px;
-  color: #0377e4;
-  display: flex;
-  flex-flow: column;
-  max-width: 50%;
-  text-align: center;
-}
-.aboutParagraphSection .aboutParagraphSection__heading {
-  align-self: center;
-  margin: 10px 0;
-  font-family: "Amatic SC", cursive;
-  font-size: 40px;
-}
-.aboutParagraphSection .aboutParagraphSection__paragraph {
-  margin: 5px;
+.header .loginButton {
+  background-color: #0377e4;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-size: 10px;
+  padding: 10px;
 }
 
 .footer {
@@ -76,7 +54,7 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.footer .footer__nav .nav__ul--pages a {
+.footer .footer__nav .nav__ul--pages .ul__link {
   text-decoration: none;
   color: #fff;
   font-size: 20px;
@@ -92,6 +70,30 @@
 }
 .footer .footer__nav .nav__ul--social img {
   width: 40px;
+}
+
+.slider__Img {
+  width: 100%;
+  height: 300px;
+}
+
+.homeAboutParagraphContainer {
+  margin: 10px auto;
+  padding: 5px;
+  color: #0377e4;
+  display: flex;
+  flex-flow: column;
+  max-width: 50%;
+  text-align: center;
+}
+.homeAboutParagraphContainer .homeAboutParagraphContainer__heading {
+  align-self: center;
+  margin: 10px 0;
+  font-family: "Amatic SC", cursive;
+  font-size: 40px;
+}
+.homeAboutParagraphContainer .homeAboutParagraphContainer__paragraph {
+  margin: 5px;
 }
 
 .products__Heading {
@@ -139,7 +141,6 @@
   box-shadow: 10px 10px 10px lightblue;
   margin: 15px auto;
   transition: 0.3s;
-  background-color: rgba(255, 255, 255, 0.5);
 }
 .productCardContainer .productCard .productCard__heading {
   color: #0377e4;
@@ -212,17 +213,108 @@
   color: #fff;
 }
 
-.adminCard {
-  border: 1px red solid;
-  margin: 5px;
+.admin .admin__Heading {
+  margin: 0 auto;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  font-size: 30px;
+}
+.admin h3 {
+  margin-left: 160.797px;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
 }
 
-.loginButton {
+.addItemFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+}
+.addItemFormContainer .addItemForm {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #0377e4;
+  padding: 50px;
+}
+.addItemFormContainer .addItemForm input {
+  display: block;
+  margin: 5px auto;
+}
+.addItemFormContainer .addItemForm label {
+  margin: 5px auto;
+  display: block;
+}
+
+.admin__contactHeading {
+  margin: 10px auto 10px 160.797px;
+  font-family: "Nunito", sans-serif;
+}
+
+.adminCard {
+  width: 1200px;
+  height: auto;
+  margin: 15px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  border: #0377e4 1px solid;
+  color: #0377e4;
+  font-family: "Nunito", sans-serif;
+}
+.adminCard p {
+  width: 133px;
+}
+.adminCard .adminCard__button {
   background-color: #0377e4;
   color: #fff;
   font-family: "Nunito", sans-serif;
   font-size: 10px;
   padding: 10px;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.editForm {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border: #0377e4 solid 1px;
+  width: 1200px;
+  height: auto;
+  margin: 15px auto;
+  padding: 5px;
+}
+.editForm input,
+.editForm label {
+  width: 120px;
+}
+
+.contactCard {
+  width: 1200px;
+  height: auto;
+  margin: 15px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  border: #0377e4 1px solid;
+  color: #0377e4;
+  font-family: "Nunito", sans-serif;
+}
+.contactCard p {
+  width: 133px;
 }
 
 /*# sourceMappingURL=App.css.map */

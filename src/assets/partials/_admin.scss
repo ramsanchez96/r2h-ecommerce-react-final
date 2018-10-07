@@ -1,0 +1,47 @@
+.admin {
+  .admin__Heading {
+    margin: 0 auto;
+    font-family: $nunito;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  h3 {
+    margin-left: 160.797px;
+    font-family: $nunito;
+    font-size: 20px;
+  }
+}
+
+.addItemFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+
+  .addItemForm {
+    font-family: $nunito;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $secondary-color;
+    padding: 50px;
+
+    input {
+      display: block;
+      margin: 5px auto;
+    }
+
+    label {
+      margin: 5px auto;
+      display: block;
+    }
+  }
+}
+
+.admin__contactHeading {
+  margin: 10px auto 10px 160.797px;
+  font-family: $nunito;
+}

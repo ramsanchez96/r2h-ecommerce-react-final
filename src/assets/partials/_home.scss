@@ -1,0 +1,20 @@
+.homeAboutParagraphContainer {
+    margin: 10px auto;
+    padding: 5px;
+    color: $secondary-color;
+    display: flex;
+    flex-flow: column;
+    max-width: 50%;
+    text-align: center;
+  
+    .homeAboutParagraphContainer__heading {
+      align-self: center;
+      margin: 10px 0;
+      font-family: $amatic_sc;
+      font-size: 40px;
+    }
+  
+    .homeAboutParagraphContainer__paragraph {
+      margin: 5px;
+    }
+  }

@@ -2,10 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import auth0Client from '../../Auth';
 
-// const activeInlineStyle = {
-//     color: '#0377e4'
-// };
-
 const Nav = () => {
     let activeLink= {
         borderBottom: "solid #0377e4 1px"

@@ -1,0 +1,49 @@
+.formContainer {
+    width: 100vw;
+    height: 72vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/img/backgroundImg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    .contactForm {
+      display: flex;
+      width: 20%;
+      height: 80%;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+      background: rgba(255, 255, 255, 0.9);
+  
+      .contactForm__heading {
+        color: $secondary-color;
+        font-family: $nunito;
+      }
+  
+      label {
+        display: block;
+        color: $secondary-color;
+        font-family: $nunito;
+      }
+  
+      input {
+        width: 150px;
+        height: 20px;
+        border: 2px $secondary-color solid;
+        border-radius: 5%;
+        color: $secondary-color;
+      }
+  
+      textarea {
+        width: 150px;
+        border: 2px $secondary-color solid;
+      }
+  
+      .submit {
+        background-color: $secondary-color;
+        color: $primary-color;
+      }
+    }
+  }
