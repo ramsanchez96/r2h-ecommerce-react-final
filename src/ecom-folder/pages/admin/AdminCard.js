@@ -78,15 +78,6 @@ class AdminCard extends Component {
               requiered
             />
 
-            {/* <label htmlFor="flavored">Flavored:
-            <label>True:
-              <input type="radio" name="flavored" id="flavored" value="true" required/>
-            </label>
-            <label>False:
-              <input type="radio" name="flavored" id="flavored" value="false" required/>
-            </label>
-          </label> */}
-
             <label htmlFor="localImagePath">Local Image Path:</label>
             <input
               type="text"
@@ -96,8 +87,8 @@ class AdminCard extends Component {
               required
             />
 
-            <button onClick={this.handleCancelIsEditing}>Cancel Edit</button>
-            <input type="submit" value="Submit Change" />
+            <button onClick={this.handleCancelIsEditing} className="adminCard__button">Cancel Edit</button>
+            <input type="submit" value="Submit Change" className="adminCard__button"/>
           </form>
         </div>
       );

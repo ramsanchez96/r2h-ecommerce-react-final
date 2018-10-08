@@ -1,0 +1,85 @@
+@media (max-width: 575px) {
+  //HEADER
+  .header {
+    .header__heading {
+      font-size: 70px;
+    }
+
+    .header__ul {
+      a {
+        font-size: 30px;
+      }
+    }
+    .loginButton {
+      font-size: 15px;
+    }
+  }
+
+  //HOME
+
+  .homeAboutParagraphContainer {
+    .homeAboutParagraphContainer__heading {
+      align-self: center;
+      margin: 0 auto;
+      font-family: $amatic_sc;
+      font-size: 60px;
+    }
+
+    .homeAboutParagraphContainer__paragraph {
+      font-size: 20px;
+      margin: 5px auto;
+    }
+  }
+  //CONTACT
+  .formContainer {
+    width: 100vw;
+  
+    .contactForm {
+      width: 50%;
+      }
+    }
+
+   //ADMIN 
+   .admin {
+    h3 {
+      margin-left: 30px;
+    }
+  }
+  
+  .admin__contactHeading {
+    margin: 10px auto 10px 30px;
+  }
+
+
+   .adminCard {
+    width: 95%;
+    margin: 10px auto;
+    flex-wrap: wrap;
+  
+    p {
+      width: auto;
+      margin: auto 5px;
+    }
+  }
+
+  .editForm {
+    width: 95%;
+    
+  
+    input,
+    label {
+      width: auto;
+      margin: auto 5px;
+    }
+  }
+
+  .contactCard {
+    width: 95%;
+    flex-wrap: wrap;
+  
+    p {
+      width: auto;
+      margin: auto 5px;
+    }
+  }
+}

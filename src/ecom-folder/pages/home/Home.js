@@ -4,7 +4,9 @@ import Slider from "./Slider";
 const Home = () => {
   return (
     <div>
-      <Slider />
+      <div className="sliderContainer">
+        <Slider />
+      </div>
       <section className="homeAboutParagraphContainer">
         <h2 className="homeAboutParagraphContainer__heading">
           About Bubbly...

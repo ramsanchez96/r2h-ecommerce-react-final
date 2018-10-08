@@ -1,0 +1,43 @@
+@media (min-width: 576px) and (max-width: 991px) {
+  //ADMIN
+  .admin {
+    h3 {
+      margin-left: 30px;
+    }
+  }
+
+  .admin__contactHeading {
+    margin: 10px auto 10px 30px;
+  }
+
+  .adminCard {
+    width: 95%;
+    margin: 10px auto;
+    flex-wrap: wrap;
+
+    p {
+      width: auto;
+      margin: auto 5px;
+    }
+  }
+
+  .editForm {
+    width: 95%;
+
+    input,
+    label {
+      width: auto;
+      margin: auto 5px;
+    }
+  }
+
+  .contactCard {
+    width: 95%;
+    flex-wrap: wrap;
+
+    p {
+      width: auto;
+      margin: auto 5px;
+    }
+  }
+}
